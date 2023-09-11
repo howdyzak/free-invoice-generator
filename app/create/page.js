@@ -7,7 +7,6 @@ import {
   Container,
   Flex,
   HStack,
-  Input,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -17,6 +16,7 @@ import {
   CompanyInfo,
   InvoiceTable,
 } from "@/components/builder";
+import { InputUI } from "@/components/ui";
 
 export default function CreateInvoice() {
   const [company, setCompany] = useState();
@@ -24,7 +24,7 @@ export default function CreateInvoice() {
     <Stack py={10}>
       <Stack
         as={Container}
-        maxW="container.lg"
+        maxW="container.xl"
         bg="white"
         minH="600px"
         rounded="sm"
@@ -41,31 +41,25 @@ export default function CreateInvoice() {
           <Stack flex={2} align="flex-end" spacing={5}>
             <HStack w="full" spacing={5} justify="flex-end">
               <Text>No #</Text>
-              <Input
-                maxW="150px"
-                borderWidth={2}
-                borderColor="gray.300"
-                rounded="sm"
+              <InputUI
+                containerStyle={{ maxWidth: "150px" }}
+                borderStyle="dashed"
               />
             </HStack>
             <HStack w="full" spacing={5} justify="flex-end">
               <Text>Invoice Date</Text>
-              <Input
+              <InputUI
                 type="date"
-                maxW="200px"
-                borderWidth={2}
-                borderColor="gray.300"
-                rounded="sm"
+                containerStyle={{ maxWidth: "200px" }}
+                borderStyle="dashed"
               />
             </HStack>
             <HStack w="full" spacing={5} justify="flex-end">
               <Text>Due Date</Text>
-              <Input
+              <InputUI
                 type="date"
-                maxW="200px"
-                borderWidth={2}
-                borderColor="gray.300"
-                rounded="sm"
+                containerStyle={{ maxWidth: "200px" }}
+                borderStyle="dashed"
               />
             </HStack>
           </Stack>

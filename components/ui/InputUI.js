@@ -9,10 +9,11 @@ export default function InputUI({
   name,
   validation,
   error,
+  containerStyle,
   ...otherInputProps
 }) {
   return (
-    <FormControl>
+    <FormControl {...containerStyle}>
       {label && <FormLabel>{label}</FormLabel>}
       {name ? (
         <Input

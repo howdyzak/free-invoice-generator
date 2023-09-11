@@ -2,6 +2,7 @@ import React from "react";
 import BusinessInfo from "./BusinessInfo";
 import { Stack, useDisclosure, Text, Button } from "@chakra-ui/react";
 import { ModalUI } from "../ui";
+import { CompanyEntry } from "../forms";
 
 export default function CompanyInfo({ company, setCompany, ...otherProps }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -18,6 +19,7 @@ export default function CompanyInfo({ company, setCompany, ...otherProps }) {
         )}
       </Stack>
       <ModalUI
+        size="4xl"
         title="Company Details"
         isOpen={isOpen}
         onClose={onClose}
@@ -27,7 +29,7 @@ export default function CompanyInfo({ company, setCompany, ...otherProps }) {
           </Button>
         }
       >
-        <Text>company data</Text>
+        <CompanyEntry />
       </ModalUI>
     </Stack>
   );
